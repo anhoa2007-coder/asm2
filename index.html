@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp hóa online cho mọi nhà | Tạp hóa Huy Hoàng</title>
+    <meta
+      name="description"
+      content="Tạp hóa Huy Hoàng online: thực phẩm khô, sữa, đồ uống, gia vị, bánh kẹo và đồ dùng thiết yếu cho gia đình."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/global.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/listings.css" />
+    <link rel="stylesheet" href="./src/css/grocery.css" />
+    <link rel="icon" type="image/svg+xml" href="./src/imgs/logo%20shop%20huy%20hoang%20white.svg" />
+  </head>
+  <body data-base="./">
+    <div class="page-shell">
+      <header class="topbar">
+        <button
+          class="topbar-mobile-toggle"
+          type="button"
+          aria-label="Mở menu"
+          aria-controls="mobile-nav-drawer"
+          aria-expanded="false"
+        >
+          ☰</button
+        ><a class="brand" href="./index.html"
+          ><img
+            class="brand-logo"
+            src="./src/imgs/logo%20shop%20huy%20hoang%20white.svg"
+            alt="Tạp hóa Huy Hoàng"
+        /></a>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a href="./src/html/products.html">Sản phẩm</a
+          ><a href="./src/html/combos.html">Gợi ý mua sắm</a
+          ><a href="./src/html/tips.html">Mẹo hay</a><a href="#ho-tro">Hỗ trợ</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="grocery-cart-link"
+            href="./src/html/checkout.html"
+            aria-label="Gi&#7887; h&#224;ng"
+            title="Gi&#7887; h&#224;ng"
+            ><span data-cart-count>0</span></a
+          >
+        </div>
+      </header>
+      <div class="mobile-nav-overlay" hidden></div>
+      <aside
+        class="mobile-nav-drawer"
+        id="mobile-nav-drawer"
+        aria-label="Menu điện thoại"
+        aria-hidden="true"
+        inert
+      >
+        <div class="mobile-nav-head">
+          <a class="brand" href="./index.html"
+            ><img
+              class="brand-logo"
+              src="./src/imgs/logo%20shop%20huy%20hoang%20white.svg"
+              alt="Tạp hóa Huy Hoàng" /></a
+          ><button class="mobile-nav-close" type="button" aria-label="Đóng menu">✕</button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="./src/html/products.html">Sản phẩm</a
+          ><a href="./src/html/combos.html">Gợi ý mua sắm</a
+          ><a href="./src/html/tips.html">Mẹo hay</a><a href="#ho-tro">Hỗ trợ</a>
+        </nav>
+      </aside>
+      <main class="content home-main">
+        <section class="home-product-section home-sale-section" aria-labelledby="home-sale-title">
+          <div class="home-carousel" data-carousel aria-hidden="false">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img
+                  src="./src/imgs/banners/Gemini_Generated_Image_lra6cxlra6cxlra6.png"
+                  alt="Ưu đãi trong tuần — Hàng sale tại Huy Hoàng"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="./src/imgs/banners/Gemini_Generated_Image_red6f9red6f9red6.png"
+                  alt="Gia nhập đội ngũ Huy Hoàng — Tuyển dụng nhân viên"
+                />
+              </div>
+            </div>
+            <button class="carousel-prev" aria-label="Trước">‹</button>
+            <button class="carousel-next" aria-label="Tiếp">›</button>
+            <div class="carousel-indicators" role="tablist"></div>
+          </div>
+          <div class="section-top listing-section-top">
+            <div>
+              <p class="eyebrow">Ưu đãi trong tuần</p>
+              <h2 id="home-sale-title">Hàng sale</h2>
+            </div>
+            <p class="section-copy">
+              Săn giá tốt cho những món quen thuộc trong giỏ hàng mỗi ngày.
+            </p>
+          </div>
+          <div
+            class="home-feature-grid"
+            data-home-grid="sale"
+            aria-label="Sản phẩm đang giảm giá"
+          ></div>
+          <div class="home-section-actions">
+            <a class="home-section-link" href="./src/html/products.html"
+              >Khám phá tất cả sản phẩm <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </section>
+        <section
+          class="home-product-section home-essential-section"
+          aria-labelledby="home-essential-title"
+        >
+          <div class="section-top listing-section-top">
+            <div>
+              <p class="eyebrow">Gian hàng thiết yếu</p>
+              <h2 id="home-essential-title">Sản phẩm thiết yếu</h2>
+            </div>
+            <p class="section-copy">
+              Đủ đầy những món cần có cho bữa cơm và việc chăm sóc nhà cửa.
+            </p>
+          </div>
+          <div
+            class="home-feature-grid"
+            data-home-grid="essential"
+            data-products="gao-thom,mi-an-lien,sua-tuoi,dau-an,trung-ga,nuoc-rua-chen"
+            aria-label="Sản phẩm thiết yếu cho gia đình"
+          ></div>
+          <div class="home-section-actions">
+            <a class="home-section-link" href="./src/html/products.html"
+              >Xem toàn bộ gian hàng <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer" id="ho-tro">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img
+              class="brand-logo"
+              src="./src/imgs/logo%20shop%20huy%20hoang%20white.svg"
+              alt="Tạp hóa Huy Hoàng"
+            />
+            <p>
+              Tạp hóa online cho mọi nhà. Từ bữa cơm hằng ngày đến đồ dùng thiết yếu, tìm món bạn
+              cần tại Huy Hoàng.
+            </p>
+          </div>
+          <div>
+            <h2 class="footer-title">Mua sắm</h2>
+            <div class="footer-links">
+              <a href="./src/html/products.html">Tất cả sản phẩm</a
+              ><a href="./src/html/combos.html">Gợi ý cho gia đình</a
+              ><a href="./src/html/checkout.html">Giỏ hàng</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="footer-title">Hỗ trợ mua hàng</h2>
+            <div class="footer-links">
+              <a href="./src/html/tips.html#huong-dan">Hướng dẫn mua sắm</a
+              ><a href="./src/html/tips.html#giao-hang">Giao nhận & kiểm hàng</a
+              ><a href="./src/html/tips.html#bao-quan">Bảo quản sản phẩm</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="footer-title">Thông tin sản phẩm</h2>
+            <p>
+              Giá tham khảo, hình ảnh minh họa. Giá bán, nhãn hàng và tình trạng hàng cần được cửa
+              hàng xác nhận trước khi đặt.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Tạp hóa Huy Hoàng.</p>
+          <p>Đủ đồ thiết yếu, tiện mua mỗi ngày.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="./src/js/grocery-data.js" defer></script>
+    <script src="./src/js/grocery.js" defer></script>
+  </body>
+</html>
