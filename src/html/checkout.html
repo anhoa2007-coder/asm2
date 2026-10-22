@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán | Tạp hóa Huy Hoàng</title>
+    <meta name="description" content="Kiểm tra giỏ hàng và gửi yêu cầu đặt hàng tại Tạp hóa Huy Hoàng." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/global.css" />
+    <link rel="stylesheet" href="../../src/css/main.css" />
+    <link rel="stylesheet" href="../../src/css/listings.css" />
+    <link rel="stylesheet" href="../../src/css/grocery.css" />
+    <link rel="stylesheet" href="../../src/css/checkout.css" />
+  <link rel="icon" type="image/svg+xml" href="../imgs/logo%20shop%20huy%20hoang%20white.svg" /></head>
+  <body data-base="../../" data-auth-guarded="cart">
+    <div class="page-shell">
+      <header class="topbar">
+        <button
+          class="topbar-mobile-toggle"
+          type="button"
+          aria-label="Mở menu"
+          aria-controls="mobile-nav-drawer"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <a class="brand" href="../../index.html">
+          <img
+            class="brand-logo"
+            src="../../src/imgs/logo%20shop%20huy%20hoang%20white.svg"
+            alt="Tạp hóa Huy Hoàng"
+          />
+        </a>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a href="../../src/html/products.html">Sản phẩm</a>
+
+          <a href="../../src/html/combos.html">Gợi ý mua sắm</a>
+          <a href="../../src/html/tips.html">Mẹo hay</a>
+          <a href="#ho-tro">Hỗ trợ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="grocery-cart-link" href="../../src/html/checkout.html" aria-label="Gi&#7887; h&#224;ng" title="Gi&#7887; h&#224;ng"><span data-cart-count>0</span></a>
+        </div>
+      </header>
+      <div class="mobile-nav-overlay" hidden></div>
+      <aside
+        class="mobile-nav-drawer"
+        id="mobile-nav-drawer"
+        aria-label="Menu điện thoại"
+        aria-hidden="true"
+        inert
+      >
+        <div class="mobile-nav-head">
+          <a class="brand" href="../../index.html">
+            <img
+              class="brand-logo"
+              src="../../src/imgs/logo%20shop%20huy%20hoang%20white.svg"
+              alt="Tạp hóa Huy Hoàng"
+            />
+          </a>
+          <button class="mobile-nav-close" type="button" aria-label="Đóng menu">✕</button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="../../src/html/products.html">Sản phẩm</a>
+
+          <a href="../../src/html/combos.html">Gợi ý mua sắm</a>
+          <a href="../../src/html/tips.html">Mẹo hay</a>
+          <a href="#ho-tro">Hỗ trợ</a>
+        </nav>
+      </aside>
+
+      <main class="checkout-main">
+        <div class="checkout-heading">
+          <div>
+            <p class="eyebrow">Hoàn tất mua sắm</p>
+            <h1>Thanh toán</h1>
+            <p>Kiểm tra sản phẩm và điền thông tin nhận hàng để gửi yêu cầu đặt hàng.</p>
+          </div>
+          <a class="checkout-back-link" href="../../src/html/products.html">← Tiếp tục mua sắm</a>
+        </div>
+
+        <div class="checkout-layout" data-checkout-content>
+          <section class="checkout-panel checkout-order-panel" aria-labelledby="cart-title">
+            <div class="checkout-panel-heading">
+              <div>
+                <p class="checkout-step">Bước 1</p>
+                <h2 id="cart-title">Giỏ hàng</h2>
+              </div>
+              <span class="checkout-item-count" data-checkout-count>0 sản phẩm</span>
+            </div>
+            <div class="checkout-empty" data-cart-empty hidden>
+              <span class="checkout-empty-icon" aria-hidden="true">🛒</span>
+              <h2>Giỏ hàng đang trống</h2>
+              <p>Hãy chọn vài món thiết yếu từ gian hàng để tiếp tục.</p>
+              <a class="checkout-primary-link" href="../../src/html/products.html">Khám phá sản phẩm</a>
+            </div>
+            <div class="checkout-items" data-cart-items></div>
+            <p class="checkout-demo-note">
+              Giá sản phẩm là giá tham khảo. Cửa hàng sẽ liên hệ xác nhận giá và tình trạng hàng.
+            </p>
+          </section>
+
+          <form class="checkout-form" data-checkout-form>
+            <section class="checkout-panel" aria-labelledby="delivery-title">
+              <div class="checkout-panel-heading">
+                <div>
+                  <p class="checkout-step">Bước 2</p>
+                  <h2 id="delivery-title">Thông tin nhận hàng</h2>
+                </div>
+                <span class="checkout-heading-icon" aria-hidden="true">⌖</span>
+              </div>
+              <div class="checkout-fields">
+                <label>
+                  Họ và tên
+                  <input name="name" autocomplete="name" required maxlength="100" placeholder="Tên người nhận" />
+                </label>
+                <label>
+                  Số điện thoại
+                  <input
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    pattern="[0-9]{9,15}"
+                    required
+                    placeholder="Ví dụ: 0901234567"
+                  />
+                </label>
+                <label class="checkout-field-wide">
+                  Địa chỉ giao hàng
+                  <input
+                    name="address"
+                    autocomplete="street-address"
+                    required
+                    maxlength="200"
+                    placeholder="Số nhà, tên đường, phường/xã, quận/huyện"
+                  />
+                </label>
+                <label class="checkout-field-wide">
+                  Ghi chú cho cửa hàng <span>(không bắt buộc)</span>
+                  <textarea name="note" rows="3" maxlength="500" placeholder="Thời gian nhận hàng hoặc lưu ý khác"></textarea>
+                </label>
+              </div>
+            </section>
+
+            <section class="checkout-panel" aria-labelledby="payment-title">
+              <div class="checkout-panel-heading">
+                <div>
+                  <p class="checkout-step">Bước 3</p>
+                  <h2 id="payment-title">Phương thức thanh toán</h2>
+                </div>
+                <span class="checkout-heading-icon" aria-hidden="true">₫</span>
+              </div>
+              <fieldset class="checkout-payment-options">
+                <legend class="sr-only">Chọn phương thức thanh toán</legend>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="cod" checked />
+                  <span class="checkout-payment-icon" aria-hidden="true">🚚</span>
+                  <span><strong>Thanh toán khi nhận hàng</strong><small>Trả tiền trực tiếp cho nhân viên giao hàng</small></span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="bank" />
+                  <span class="checkout-payment-icon" aria-hidden="true">🏦</span>
+                  <span><strong>Chuyển khoản</strong><small>Cửa hàng sẽ xác nhận thông tin chuyển khoản sau</small></span>
+                </label>
+              </fieldset>
+              <p class="checkout-payment-note" data-payment-note>
+                Bạn thanh toán bằng tiền mặt sau khi nhận và kiểm tra hàng.
+              </p>
+            </section>
+
+            <p class="checkout-form-status" data-checkout-status role="status" aria-live="polite"></p>
+            <button class="checkout-submit" type="submit">Gửi yêu cầu đặt hàng</button>
+            <p class="checkout-terms">
+              Đây là bản mẫu giao diện: yêu cầu sẽ chưa được gửi đến cửa hàng cho đến khi có hệ thống xử lý đơn hàng.
+            </p>
+          </form>
+
+          <aside class="checkout-panel checkout-summary" aria-labelledby="summary-title">
+            <p class="checkout-step">Tóm tắt</p>
+            <h2 id="summary-title">Đơn hàng của bạn</h2>
+            <div class="checkout-summary-lines">
+              <div><span>Tạm tính</span><strong data-subtotal>0 ₫</strong></div>
+              <div><span>Phí giao hàng</span><strong data-shipping>25.000 ₫</strong></div>
+            </div>
+            <div class="checkout-summary-total">
+              <span>Tổng cộng</span><strong data-total>25.000 ₫</strong>
+            </div>
+            <p class="checkout-summary-footnote">Phí giao hàng sẽ được cửa hàng xác nhận khi liên hệ với bạn.</p>
+            <div class="checkout-trust-note"><span aria-hidden="true">✓</span> Thông tin đơn hàng được hiển thị rõ ràng trước khi xác nhận.</div>
+          </aside>
+        </div>
+
+        <section class="checkout-confirmation" data-order-confirmation role="status" tabindex="-1" hidden>
+          <span class="checkout-confirmation-icon" aria-hidden="true">✓</span>
+          <p class="eyebrow">Đã hoàn tất bản xem trước</p>
+          <h2>Bản xem trước đơn hàng đã hoàn tất</h2>
+          <p data-confirmation-message></p>
+          <p class="checkout-demo-note">
+            Đây chỉ là xác nhận trên giao diện mẫu, chưa gửi đơn hàng thật và chưa thực hiện thanh toán.
+          </p>
+          <a class="checkout-primary-link" href="../../src/html/products.html">Tiếp tục mua sắm</a>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="ho-tro">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img class="brand-logo" src="../../src/imgs/logo%20shop%20huy%20hoang%20white.svg" alt="Tạp hóa Huy Hoàng" />
+            <p>Tạp hóa online cho mọi nhà. Từ bữa cơm hằng ngày đến đồ dùng thiết yếu, tìm món bạn cần tại Huy Hoàng.</p>
+          </div>
+          <div>
+            <h2 class="footer-title">Mua sắm</h2>
+            <div class="footer-links">
+              <a href="../../src/html/products.html">Tất cả sản phẩm</a>
+              <a href="../../src/html/combos.html">Gợi ý cho gia đình</a>
+              <a href="../../src/html/checkout.html">Giỏ hàng</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="footer-title">Hỗ trợ mua hàng</h2>
+            <div class="footer-links">
+              <a href="../../src/html/tips.html#huong-dan">Hướng dẫn mua sắm</a>
+              <a href="../../src/html/tips.html#giao-hang">Giao nhận & kiểm hàng</a>
+              <a href="../../src/html/tips.html#bao-quan">Bảo quản sản phẩm</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="footer-title">Thông tin sản phẩm</h2>
+            <p>Giá tham khảo, hình ảnh minh họa. Giá bán, nhãn hàng và tình trạng hàng cần được cửa hàng xác nhận trước khi đặt.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Tạp hóa Huy Hoàng.</p>
+          <p>Đủ đồ thiết yếu, tiện mua mỗi ngày.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../../src/js/grocery-data.js" defer></script>
+    <script src="../../src/js/grocery.js" defer></script>
+    <script src="../../src/js/checkout.js" defer></script>
+  </body>
+</html>
