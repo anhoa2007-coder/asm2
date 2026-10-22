@@ -35,6 +35,22 @@
   if (!itemsNode || !emptyNode || !form || !layout || !confirmation) return;
 
   const status = document.querySelector('[data-checkout-status]');
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const vietnameseMobilePhonePattern = /^(?:0[35789][0-9]{8}|\+84[35789][0-9]{8})$/;
+  const validatePhone = () => {
+    const rawPhone = phoneInput.value;
+    const phone = rawPhone.trim().replace(/[\s().-]/g, '');
+    if (!phone) {
+      phoneInput.setCustomValidity(rawPhone ? 'Vui lòng nhập số điện thoại di động Việt Nam hợp lệ.' : '');
+      return false;
+    }
+    const isValid = vietnameseMobilePhonePattern.test(phone);
+    phoneInput.setCustomValidity(
+      isValid ? '' : 'Vui lòng nhập số điện thoại di động Việt Nam hợp lệ (ví dụ 0901234567).',
+    );
+    return isValid;
+  };
+  phoneInput.addEventListener('input', validatePhone);
   const money = amount => new Intl.NumberFormat('vi-VN').format(amount) + ' ₫';
   const normalizeCart = value => {
     if (!Array.isArray(value)) return [];
@@ -167,6 +183,7 @@
       status.textContent = 'Giỏ hàng đang trống. Vui lòng thêm sản phẩm trước khi tiếp tục.';
       return;
     }
+    validatePhone();
     if (!form.reportValidity()) return;
 
     const formData = new FormData(form);
